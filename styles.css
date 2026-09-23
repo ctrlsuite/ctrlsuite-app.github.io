@@ -307,6 +307,7 @@ section { padding: 96px 0; }
 .download .wrap { max-width: 900px; }
 .download-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 .download-cards.single { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+.download-cards.single .dl-card .btn { align-self: center; }
 .dl-card {
   background: var(--panel);
   border: 1px solid var(--border);
