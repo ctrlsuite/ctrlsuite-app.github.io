@@ -1,7 +1,7 @@
-# ctrlsuite-app.github.io
+# ctrlsuite.github.io
 
-Source of [ctrlsuite-app.github.io](https://ctrlsuite-app.github.io/), the presentation page for
-[CTRLSuite](https://github.com/ctrlsuite-app/ctrlsuite-downloads). Plain HTML/CSS/JS, no build step: GitHub Pages
+Source of [ctrlsuite.github.io](https://ctrlsuite.github.io/), the presentation page for
+[CTRLSuite](https://github.com/ctrlsuite/ctrlsuite-downloads). Plain HTML/CSS/JS, no build step: GitHub Pages
 serves the repository root as is (see `.nojekyll`).
 
 - `index.html` / `styles.css` / `script.js` — the page. Colors are CTRLSuite's own **Neon** built-in theme
