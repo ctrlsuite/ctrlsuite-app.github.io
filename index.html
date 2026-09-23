@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTRLSuite — your controller, tuned your way</title>
+<meta name="description" content="CTRLSuite reads your controller directly and hands games an already-corrected one: real deadzone shapes and response curves, LED colors, offline PlayStation calibration and a faster polling rate. Free for Windows.">
+<meta property="og:title" content="CTRLSuite">
+<meta property="og:description" content="Deadzones, LEDs, calibration and polling rate — the control usually reserved for drivers, in one app.">
+<meta property="og:image" content="https://ctrlsuite-app.github.io/assets/screens/deadzone.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 655 379" aria-hidden="true"><g transform="translate(0,379) scale(0.1,-0.1)">
+        <path fill="#ff00ff" d="M2005 3364 c-318 -57 -513 -202 -659 -492 -174 -345 -583 -1462 -626 -1709 -58 -330 145 -666 465 -769 163 -53 363 -27 501 65 116 78 156 123 473 546 204 271 219 287 282 315 48 20 56 20 881 18 832 -3 833 -3 873 -25 55 -30 71 -48 256 -303 239 -330 301 -411 375 -484 114 -113 277 -175 429 -162 283 22 517 207 611 482 24 69 28 95 28 199 0 138 -16 206 -144 620 -226 729 -419 1217 -549 1387 -84 111 -195 191 -343 248 -109 42 -203 61 -344 67 -179 8 -244 -10 -360 -105 -34 -28 -71 -55 -82 -61 -15 -8 -237 -11 -740 -11 l-719 0 -34 23 c-19 13 -63 47 -99 75 -87 71 -158 92 -294 91 -55 0 -137 -7 -181 -15z"/>
+        <path fill="#00ffff" d="M2027 2806 c-148 -55 -170 -253 -38 -338 41 -26 53 -29 113 -26 57 3 73 8 105 34 56 45 78 89 78 154 0 130 -135 222 -258 176z"/>
+        <path fill="#00ffff" d="M4480 2787 c-112 -59 -121 -232 -17 -311 48 -37 112 -51 165 -37 47 13 106 60 128 102 17 33 19 116 3 156 -13 34 -55 80 -91 99 -43 22 -137 18 -188 -9z"/>
+        <path fill="#00ffff" d="M1705 2456 c-5 -3 -22 -7 -38 -10 -39 -9 -104 -71 -117 -112 -27 -79 -8 -155 50 -208 115 -104 292 -44 325 111 14 67 -37 163 -105 198 -29 15 -98 27 -115 21z"/>
+        <path fill="#00ffff" d="M2387 2446 c-142 -53 -171 -241 -52 -332 65 -49 180 -46 241 8 48 42 67 83 67 143 0 135 -131 227 -256 181z"/>
+        <path fill="#00ffff" d="M4125 2433 c-70 -37 -105 -95 -105 -173 0 -67 29 -123 82 -157 35 -24 52 -28 108 -28 56 0 73 4 108 28 95 62 111 202 33 291 -46 53 -162 73 -226 39z"/>
+        <path fill="#00ffff" d="M4855 2431 c-65 -29 -115 -104 -115 -171 0 -8 5 -32 10 -52 34 -120 185 -176 293 -109 63 41 91 95 85 172 -10 140 -145 219 -273 160z"/>
+        <path fill="#00ffff" d="M2027 2086 c-106 -39 -155 -158 -108 -261 67 -149 274 -149 347 0 22 46 26 64 20 103 -16 121 -146 200 -259 158z"/>
+        <path fill="#00ffff" d="M4488 2070 c-189 -103 -104 -378 112 -358 94 9 157 74 167 172 7 71 -22 136 -79 174 -54 35 -146 41 -200 12z"/>
+      </g></svg>
+      <span class="brand-name"><strong>CTRL</strong><span>Suite</span></span>
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#download">Download</a>
+      <a class="btn primary" href="https://github.com/ctrlsuite-app/ctrlsuite-downloads/releases/latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero">
+    <img class="hero-logo" src="assets/logo.svg" alt="" aria-hidden="true">
+    <span class="eyebrow"><span class="dot"></span> Free · Windows, macOS preview</span>
+    <h1>The controller settings your games <span class="accent">never gave you.</span></h1>
+    <p class="lede">
+      CTRLSuite reads your controller directly and hands games an already-corrected one: real deadzone shapes
+      and response curves, LED colors, offline PlayStation calibration, and a faster polling rate — in one app,
+      free, no game plugins.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn primary" href="https://github.com/ctrlsuite-app/ctrlsuite-downloads/releases/latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 9h6"/></svg>
+        Download for Windows
+      </a>
+      <a class="btn outline" href="#features">See what it does</a>
+    </div>
+    <p class="hero-note">Installer or zip · not code-signed yet, Windows may ask you to confirm once</p>
+
+    <div class="hero-shot">
+      <div class="frame">
+        <div class="titlebar-fake"><span></span><span></span><span></span></div>
+        <img src="assets/screens/deadzone.png" alt="CTRLSuite's Deadzone screen: a DualSense stick shown as a live map, with a rounded-square shape, inner deadzone and response curve, next to a second stick with the same settings.">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ORIGIN ============================== -->
+  <section class="origin">
+    <div class="wrap">
+      <p>It started from a single problem: <strong>deadzones in Rocket League</strong>. The game doesn't let you
+        adjust them, and a stick with the slightest play at center turns into a car that steers on its own.</p>
+      <p>So CTRLSuite gets in between the controller and the game — reading the pad, applying the deadzone you
+        actually want, and handing the game an already-corrected virtual controller.</p>
+      <p>Once that piece existed, the rest followed: LEDs, calibration, polling rate, button and vibration
+        tests. One app, one place to manage your controller — whatever you want to do with it.</p>
+    </div>
+  </section>
+
+  <!-- ============================== FEATURES ============================== -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="kicker">What it does</span>
+        <h2>Six sections, one controller</h2>
+        <p>Every screenshot below is the real app, reading a real DualSense.</p>
+      </div>
+
+      <!-- 1. Deadzone -->
+      <div class="feature">
+        <div class="feature-text">
+          <span class="kicker">Deadzone</span>
+          <h3>Shape it exactly how you want</h3>
+          <p>Four outer shapes — including one projected onto a square, so a full diagonal still reads 100% on
+            both axes — an inner deadzone that's either cross-shaped or perfectly round, and a response curve:
+            linear, exponential, sinusoidal, or drawn by hand and exported with the profile.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Live map, adjusted with the controller in hand</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Inner and outer deadzone chosen separately</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> A profile per game, switched from the tray</li>
+          </ul>
+        </div>
+        <div class="feature-shot"><div class="frame"><img src="assets/screens/deadzone.png" alt="Deadzone screen with a stick's map, shape selector and response curve."></div></div>
+      </div>
+
+      <!-- 2. Controller test -->
+      <div class="feature reverse">
+        <div class="feature-text">
+          <span class="kicker">Controller test</span>
+          <h3>Know exactly what your pad is doing</h3>
+          <p>Stick circularity, button and trigger readouts, motor vibration, stick resolution in bits, and the
+            real update rate — read straight over HID on the rare occasions the deadzone would otherwise hide
+            it from the browser.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Works with Xbox, PlayStation, Switch and XInput pads</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Average error against a perfect circle</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Writes nothing to the controller</li>
+          </ul>
+        </div>
+        <div class="feature-shot"><div class="frame"><img src="assets/screens/controller-test.png" alt="Controller test screen with two stick maps, button and trigger readouts, vibration and stick resolution."></div></div>
+      </div>
+
+      <!-- 3. LEDs -->
+      <div class="feature">
+        <div class="feature-text">
+          <span class="kicker">LED lights</span>
+          <h3>Your color, every time it connects</h3>
+          <p>Light bar color, player LEDs, and microphone LED — for DualShock 4, DualSense and DualSense Edge.
+            Applied automatically the moment the controller shows up, even while CTRLSuite sits in the tray.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Picker, hex code, or one-tap presets</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Remembered per controller, reapplied automatically</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Restored after PlayStation calibration resets it</li>
+          </ul>
+        </div>
+        <div class="feature-shot"><div class="frame"><img src="assets/screens/led.png" alt="LED lights screen with the light bar color, player LED and microphone LED of a DualSense controller."></div></div>
+      </div>
+
+      <!-- 4. Calibration -->
+      <div class="feature reverse">
+        <div class="feature-text">
+          <span class="kicker">PlayStation calibration</span>
+          <h3>DualShock Tools, built in and offline</h3>
+          <p>The full calibration suite for genuine Sony controllers — stick center and range, fine-tuning,
+            quick test — with a history that remembers every calibration by name and never touches the network.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> DualShock 4, DualSense, DualSense Edge, PS VR2</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Warns you when the controller doesn't match its history</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Export and import a whole calibration history</li>
+          </ul>
+        </div>
+        <div class="feature-shot"><div class="frame"><img src="assets/screens/calibration.png" alt="PlayStation Calibration screen with the calibration history: named entries, Current, Restore, Rename and Delete."></div></div>
+      </div>
+
+      <!-- 5. Overclock -->
+      <div class="feature">
+        <div class="feature-text">
+          <span class="kicker">Overclock</span>
+          <h3>Faster than Windows reads by default</h3>
+          <p>Raise your controller's USB polling rate with HIDUSBF — up to 1000 Hz with the standard, signed
+            driver, 8000 Hz with the patched one — and measure the real rate as you move the stick.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Lists only real controllers, not every USB device</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> One click applies it and restarts the device</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Measured rate, not just what was requested</li>
+          </ul>
+        </div>
+        <div class="feature-shot"><div class="frame"><img src="assets/screens/overclock.png" alt="Overclock screen: HIDUSBF driver installed and running, a DualSense controller set to 1000 Hz."></div></div>
+      </div>
+
+      <!-- 6. Themes -->
+      <div class="feature reverse">
+        <div class="feature-text">
+          <span class="kicker">Make it yours</span>
+          <h3>Three colors, and the whole app follows</h3>
+          <p>Pick a background, primary and secondary color once — every panel, switch, and even the embedded
+            PlayStation calibration section repaints itself live, with no restart.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Save as many themes as you like</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> English and Italian, switched with no restart</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Nothing is ever lost: edits live in a draft until saved</li>
+          </ul>
+        </div>
+        <div class="feature-shot"><div class="frame"><img src="assets/screens/settings.png" alt="Settings screen with the language selector and the three theme colors: background, primary and secondary."></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================== HOW IT WORKS ============================== -->
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="kicker">How it works</span>
+        <h2>CTRLSuite sits in between</h2>
+        <p>Nothing to configure in the game — it only ever sees the corrected controller.</p>
+      </div>
+
+      <div class="how-diagram" aria-hidden="true">
+        <div class="how-node">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h4M8 10v4M15.5 11.5h.01M18.5 13.5h.01"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.152A4 4 0 0 0 17.32 5z"/></svg>
+          </div>
+          <span>Your controller</span>
+        </div>
+        <div class="how-line a"></div>
+        <div class="how-node mid">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-8m0 0V4m0 8h8m-8 0H4"/></svg>
+          </div>
+          <span>CTRLSuite</span>
+        </div>
+        <div class="how-line b"></div>
+        <div class="how-node">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span>Your games</span>
+        </div>
+      </div>
+
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="num">1</div>
+          <h4>Connect</h4>
+          <p>CTRLSuite reads your controller directly, the moment it moves or presses something.</p>
+        </div>
+        <div class="how-step">
+          <div class="num">2</div>
+          <h4>Tune it</h4>
+          <p>Deadzone shape, response curve, LEDs, polling rate — every change shows up live on the map.</p>
+        </div>
+        <div class="how-step">
+          <div class="num">3</div>
+          <h4>Play</h4>
+          <p>Games only ever see an already-corrected virtual controller. Nothing to set up on their side.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== DOWNLOAD ============================== -->
+  <section class="download" id="download">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="kicker">Get it</span>
+        <h2>Free to download</h2>
+        <p>Windows is the full experience. macOS runs the interface, without the parts that need a signed driver.</p>
+      </div>
+      <div class="download-cards">
+        <div class="dl-card">
+          <div class="platform">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.1 10.3 4v7.1H3V5.1zm0 13.8 7.3 1v-7H3v6zm8.2 1.1L21 21V12h-9.8v8zM21 3 11.2 4.3v6.8H21V3z"/></svg>
+            Windows
+          </div>
+          <p>Installer (recommended — Start menu shortcut, updates itself) or a no-install zip. Requires
+            administrator on first launch: the deadzone needs it.</p>
+          <a class="btn primary" href="https://github.com/ctrlsuite-app/ctrlsuite-downloads/releases/latest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 9h6"/></svg>
+            Download the latest release
+          </a>
+        </div>
+        <div class="dl-card">
+          <div class="platform">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.462 2.257-1.238 3.06-.816.85-2.16 1.51-3.26 1.42-.148-1.104.418-2.28 1.18-3.06.83-.87 2.28-1.51 3.318-1.42zM20.5 17.15c-.53 1.22-.78 1.77-1.46 2.85-.94 1.5-2.27 3.38-3.92 3.4-1.46.02-1.84-.95-3.83-.94-1.99.01-2.4.96-3.87.94-1.65-.02-2.9-1.7-3.84-3.2C1.24 16.98.6 12.95 2.4 10.2c1.15-1.75 2.98-2.78 4.69-2.78 1.73 0 2.82 1.04 4.25 1.04 1.39 0 2.24-1.04 4.25-1.04 1.36 0 2.8.74 3.82 2.02-3.36 1.84-2.82 6.63.09 7.7z"/></svg>
+            macOS
+          </div>
+          <p>Deadzone preview only: shape, adjust and save profiles. macOS has no signed driver entitlement
+            equivalent to Windows' HIDMaestro, so it can't create the virtual controller games would read.</p>
+          <a class="btn outline" href="https://github.com/ctrlsuite-app/ctrlsuite-downloads/releases/latest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16M2 9h6"/></svg>
+            Download the latest release
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="credits">
+      Integrates the offline build of <a href="https://dualshock-tools.github.io/" target="_blank" rel="noopener">DualShock Tools</a>
+      for PlayStation calibration, and uses <a href="https://github.com/nefarius/HidHide" target="_blank" rel="noopener">HidHide</a>
+      and <a href="https://github.com/ViGEm/HidHide" target="_blank" rel="noopener">HIDMaestro</a> to present the corrected virtual
+      controller on Windows. Overclock uses <a href="https://github.com/LordOfMice/hidusbf" target="_blank" rel="noopener">HIDUSBF</a>
+      by SweetLow (downloaded separately: its license doesn't allow redistributing it here). CTRLSuite's own code is
+      proprietary; third-party components remain under their own licenses.
+    </div>
+    <div class="foot-links">
+      <a href="https://github.com/ctrlsuite-app/ctrlsuite-downloads">Releases</a>
+      <a href="https://github.com/ctrlsuite-app/ctrlsuite-downloads#readme">Documentation</a>
+      <a href="https://github.com/ctrlsuite-app/ctrlsuite-downloads/issues">Report an issue</a>
+    </div>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 CTRLSuite. All rights reserved.</p></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
